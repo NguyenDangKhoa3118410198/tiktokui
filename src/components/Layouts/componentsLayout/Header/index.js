@@ -12,9 +12,7 @@ function Header() {
    return (
       <header className={cx("wrapper")}>
          <div className={cx("inner")}>
-            <div className={cx("logo")}>
-               <h1>KOSSPRZ</h1>
-            </div>
+            <h1>KOSSPRZ</h1>
 
             <div className={cx("search")}>
                <input placeholder="Search something..." spellcheck={false} />
