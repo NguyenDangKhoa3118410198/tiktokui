@@ -16,7 +16,13 @@
    justify-content: space-between;
 }
 
-.logo {
+.homepage {
+   color: var(--black) !important;
+   cursor: pointer;
+
+   &:hover {
+      color: var(--primary) !important;
+   }
 }
 
 .search,

@@ -11,6 +11,8 @@ import styles from "./Header.module.scss";
 import { useEffect, useState } from "react";
 import { Wrapper as PopperWrapper } from "../../../Popper";
 import AccountItems from "../../../AccountItems";
+import Button from "../../../Button";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles); // dung de co the su dung -  trong ten, vi du (post-item)
 function Header() {
@@ -26,7 +28,11 @@ function Header() {
    return (
       <header className={cx("wrapper")}>
          <div className={cx("inner")}>
-            <h1>KOSSPRZ</h1>
+            <h1 className={cx("logo")}>
+               <Link className={cx("homepage")} to="/">
+                  KOSSPRZ
+               </Link>
+            </h1>
 
             <Tippy
                interactive
@@ -55,7 +61,10 @@ function Header() {
                </div>
             </Tippy>
 
-            <div className={cx("actions")}></div>
+            <div className={cx("actions")}>
+               <Button text>Upload</Button>
+               <Button primary>Log in</Button>
+            </div>
          </div>
       </header>
    );
