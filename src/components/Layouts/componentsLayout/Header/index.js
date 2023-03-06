@@ -4,6 +4,7 @@ import {
    faCircleXmark,
    faSpinner,
    faMagnifyingGlass,
+   faSignIn,
 } from "@fortawesome/free-solid-svg-icons";
 import Tippy from "@tippyjs/react/headless";
 
@@ -18,12 +19,12 @@ const cx = classNames.bind(styles); // dung de co the su dung -  trong ten, vi d
 function Header() {
    const [searchResult, setSearchResult] = useState([]);
 
-   useEffect(() => {
-      setTimeout(() => {
-         console.log("1");
-         setSearchResult([]);
-      }, 1000);
-   }, []);
+   // useEffect(() => {
+   //    setTimeout(() => {
+   //       console.log("1");
+   //       setSearchResult([]);
+   //    }, 1000);
+   // }, []);
 
    return (
       <header className={cx("wrapper")}>
@@ -35,6 +36,7 @@ function Header() {
             </h1>
 
             <Tippy
+               //interactive cho phep select vao
                interactive
                visible={searchResult.length > 0}
                render={(attrs) => (
@@ -64,6 +66,11 @@ function Header() {
             <div className={cx("actions")}>
                <Button text>Upload</Button>
                <Button primary>Log in</Button>
+
+               {/* <Button className={cx("custom")} rounded>
+               <Button primary rightIcon={<FontAwesomeIcon icon={faSignIn} />}>
+                  Log in
+               </Button> */}
             </div>
          </div>
       </header>
